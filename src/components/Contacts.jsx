@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function Contacts() {
+  const [contacts, setContacts] = useState([]);
   const [contact, setContact] = useState({
     name: "",
     lastName: "",
@@ -15,7 +16,13 @@ function Contacts() {
   };
 
   const addHandler = () => {
-    console.log(contact);
+    setContacts((contacts) => [...contacts, contact]);
+    setContact({
+      name: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+    });
   };
 
   return (
