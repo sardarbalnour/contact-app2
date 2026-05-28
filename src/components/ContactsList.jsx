@@ -1,8 +1,14 @@
-
-function ContactsList(props) {
+function ContactsList({ contacts }) {
   return (
-    <div>ContactsList</div>
-  )
+    <div>
+      <h3>Contacts list</h3>
+      <ul>
+        {contacts.map((contact) => (
+          <li key={contact.id}> {contact.id}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default ContactsList
+export default ContactsList;
