@@ -1,4 +1,7 @@
-function ContactItem({ data: { id, name, email, lastName, phoneNumber } }) {
+function ContactItem({
+  data: { id, name, email, lastName, phoneNumber },
+  deleteHandler,
+}) {
   return (
     <li key={id}>
       <p>
@@ -10,7 +13,7 @@ function ContactItem({ data: { id, name, email, lastName, phoneNumber } }) {
       <p>
         <span>☎️</span> {phoneNumber}
       </p>
-      <button>🗑️</button>
+      <button onClick={deleteHandler}>🗑️</button>
     </li>
   );
 }
